@@ -370,7 +370,7 @@ endtask
     
 ////////////////////////////////////////////////////---Reading data from a file   
       initial begin
-    $readmemb("C:/Users/dell/OneDrive/Desktop/VIVADO/data.mem",instruction_mem);
+	      $readmemb("<path>\data.mem",instruction_mem);
     end
 
 ////////////////////////////////////////////////////    
