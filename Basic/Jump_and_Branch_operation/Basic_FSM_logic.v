@@ -1,4 +1,24 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: KARTHIK S
+// 
+// Create Date: 
+// Design Name: 
+// Module Name: Processor
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
 
 
 ///////////fields of IR
@@ -343,12 +363,11 @@ endtask
       
       //////////////--ZERO--////////////////
       if(`oper_type == `mul)
-        zero = ~((|SGPR[15]) | (|GPR[15]));
+        zero = ~((|SGPR[15:0]) | (|GPR[`rdst]));
       else 
         zero = ~(|GPR[`rdst]);
-      
-      
-      ////////////--OVERFLOW--///////////////
+     //   else zero = 0;
+
       if(`oper_type == `add)
         	begin
               if(`imm_mode)
@@ -370,7 +389,7 @@ endtask
     
 ////////////////////////////////////////////////////---Reading data from a file   
       initial begin
-	      $readmemb("<path>\data.mem",instruction_mem);
+    $readmemb("C:/Users/dell/OneDrive/Desktop/VIVADO/data.mem",instruction_mem);
     end
 
 ////////////////////////////////////////////////////    
@@ -410,7 +429,10 @@ always @(posedge clock)
             next_inst : begin
                           next_state = sence_halt;
                           if(jump_flag == 1)
+                                begin
                                 pc = `isrc;
+                                jump_flag = 0;
+                                end
                            else pc = pc + 1;                    
             end 
             sence_halt : begin
