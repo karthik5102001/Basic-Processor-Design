@@ -1,4 +1,23 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: KARTHIK S
+// 
+// Create Date: 
+// Design Name: 
+// Module Name: Processor_tb
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 
 // Code your testbench here
@@ -9,8 +28,8 @@ module test;
   integer i = 0;
   
 reg clock = 0 ,system_reset = 0;
-reg [15:0] din = 0;
-wire [15:0] dout;
+reg [15:0] din = 4;
+wire [15:0] dout = 0;
   
   top dut(clock,system_reset,din,dout);
  
@@ -20,8 +39,13 @@ wire [15:0] dout;
         system_reset = 1'b1;
         repeat(5) @(posedge clock);
         system_reset = 1'b0;
-        #900;
+        #700;
+        #10;
         $stop;
+ end
+ 
+ initial begin
+ $monitor("DATA IN = %0d anf DATA OUT = %0d",din,dout);
  end
  
  endmodule 
