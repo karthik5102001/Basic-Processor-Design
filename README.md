@@ -44,7 +44,8 @@ The processor includes a **Special Function Register (SFR)** that is used to sto
 ## Diagram
 Below is a cleaner version of the architecture diagram for better clarity:
 
-![Processor Architecture](C:\Users\Dell\Pictures\Screenshots)
+![Processor Architecture](![A_diagram_depicts_a_block_diagram_of_a_16-bit_simp](https://github.com/user-attachments/assets/24655d85-f275-4a95-bf7d-201e64a81e2e)
+)
 
 ## Features
 - **16-bit processing**
