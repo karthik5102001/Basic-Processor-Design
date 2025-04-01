@@ -44,7 +44,7 @@ The processor includes a **Special Function Register (SFR)** that is used to sto
 ## Diagram
 Below is a cleaner version of the architecture diagram for better clarity:
 
-![Processor Architecture](https://github.com/karthik5102001/Basic-Processor-Design/blob/main/Images/A_diagram_depicts_a_block_diagram_of_a_16-bit_simp.png)
+![Processor Architecture](https://github.com/karthik5102001/Basic-Processor-Design/blob/main/Images/Basic_proccessor.png)
 
 ## Features
 - **16-bit processing**
